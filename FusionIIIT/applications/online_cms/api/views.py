@@ -171,7 +171,7 @@ def delete_module(request, module_id):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_course_documents(request):
+def get_slides(request):
     documents = CourseDocuments.objects.all()  # Fetch all documents
     serializer = CourseDocumentsSerializer(documents, many=True)
     return Response(serializer.data)

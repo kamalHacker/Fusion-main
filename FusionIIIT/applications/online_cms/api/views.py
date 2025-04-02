@@ -129,6 +129,13 @@ from .serializers import *
 #         else:
 #             return Response({'message': 'Invalid user type'}, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+def get_modules(request):
+    if request.method == "GET":
+        modules = Modules.objects.all().values("id", "module_name")  # Use correct field name
+        return JsonResponse(list(modules), safe=False)
+    return JsonResponse({"error": "Method not allowed"}, status=405)
+    
 # add a module
 @api_view(['POST'])
 def add_module(request):

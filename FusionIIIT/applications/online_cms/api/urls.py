@@ -22,5 +22,6 @@ urlpatterns = [
 
     url(r'^attendance', views.view_attendance, name='view_attendance'),
 
+    url(r'^modules/$', views.get_modules, name='get_modules'),
 
 ]

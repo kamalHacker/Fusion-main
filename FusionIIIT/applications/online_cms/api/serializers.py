@@ -22,6 +22,11 @@ class StudentSerializer(serializers.ModelSerializer):
         model = Student
         fields = '__all__'
 
+class StudentAssignmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StudentAssignment
+        fields = '__all__'
+
 class CourseInstructorSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseInstructor

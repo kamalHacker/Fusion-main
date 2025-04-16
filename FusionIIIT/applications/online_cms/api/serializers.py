@@ -23,6 +23,7 @@ class StudentSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class StudentAssignmentSerializer(serializers.ModelSerializer):
+    upload_url = serializers.FileField(use_url=True)
     class Meta:
         model = StudentAssignment
         fields = '__all__'
@@ -55,6 +56,7 @@ class ModulesSerializer(serializers.ModelSerializer):
         fields = '__all__'
         
 class CourseDocumentsSerializer(serializers.ModelSerializer):
+    document_url = serializers.FileField(use_url=True)
     class Meta:
         model = CourseDocuments
         fields = '__all__'

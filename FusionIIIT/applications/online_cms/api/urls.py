@@ -26,5 +26,6 @@ urlpatterns = [
 
     url(r'^slides/$', views.get_slides, name='get_slides'),
 
+    url(r'^assignments/course/(?P<course_id>\d+)/$', views.get_assignments_by_course, name='get_assignments_by_course'),
     url(r'^submit-assignment/$', views.submit_assignment, name='submit_assignment'),
 ]
